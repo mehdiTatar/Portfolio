@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mehdi Tatar - CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #4F6F52; /* Comfortable green */
+      --secondary: #A98467; /* Light classy brown */
+      --text: #2c2c2c;
+      --text-light: #666;
+      --bg: #fff;
+      --bg-alt: #f4f5f3;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e0e0e0;
+      color: var(--text);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--bg);
+      margin: 40px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: flex;
+    }
+
+    .left-col {
+      width: 35%;
+      background: var(--bg-alt);
+      padding: 40px 30px;
+      border-right: 2px solid var(--accent);
+    }
+    .right-col {
+      width: 65%;
+      padding: 40px 35px;
+    }
+
+    /* HEADER / PROFILE */
+    .profile-photo {
+      width: 140px; height: 140px;
+      border-radius: 50%; overflow: hidden;
+      margin: 0 auto 20px; border: 3px solid var(--accent);
+    }
+    .profile-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%); }
+    
+    .name-box { text-align: center; margin-bottom: 30px; }
+    .name { font-size: 24px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+    .role { font-size: 13px; font-weight: 600; color: var(--secondary); margin-top: 4px; }
+
+    /* SECTIONS */
+    .section-title {
+      font-size: 16px; font-weight: 800; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 12px; border-bottom: 2px solid var(--secondary);
+      padding-bottom: 4px; display: inline-block; width: 100%;
+    }
+    
+    .section { margin-bottom: 30px; }
+
+    /* LEFT COL CONTENT */
+    .contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 12px; }
+    .contact-item svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+    .contact-item span { color: var(--text-light); word-break: break-word; }
+
+    .skills-list { list-style: none; }
+    .skills-list li { margin-bottom: 12px; }
+    .skills-list strong { display: block; font-size: 13px; color: var(--text); margin-bottom: 4px; }
+    .skills-list span { font-size: 12px; color: var(--text-light); }
+
+    .lang-item { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; }
+    .lang-item strong { color: var(--text); }
+    .lang-item span { color: var(--secondary); font-size: 12px; font-weight: 600; }
+
+    /* RIGHT COL CONTENT */
+    .about-text { font-size: 13px; color: var(--text-light); line-height: 1.7; text-align: justify; }
+
+    .item { margin-bottom: 20px; }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .item-title { font-size: 15px; font-weight: 700; color: var(--text); }
+    .item-date { font-size: 12px; font-weight: 600; color: var(--accent); background: var(--bg-alt); padding: 2px 8px; border-radius: 4px; }
+    .item-sub { font-size: 13px; font-weight: 600; color: var(--secondary); margin-bottom: 6px; }
+    .item-desc { font-size: 12.5px; color: var(--text-light); line-height: 1.6; }
+    .item-tech { font-size: 11px; color: var(--accent); font-weight: 600; margin-top: 4px; }
+
+    @media print {
+      body { background: #fff; -webkit-print-color-adjust: exact; }
+      .page { margin: 0; box-shadow: none; width: 100%; height: 100%; }
+      .print-btn, .lang-toggle { display: none; }
+    }
+
+    /* Print action overlay */
+    .print-btn {
+      position: fixed; top: 20px; right: 20px;
+      background: var(--accent); color: #fff; border: none;
+      padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 600;
+      cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: background .2s;
+    }
+    .print-btn:hover { background: var(--secondary); }
+    
+    .lang-toggle {
+      position: fixed; top: 20px; right: 150px;
+      background: #fff; color: var(--text); border: 1px solid #ddd;
+      padding: 11px 18px; border-radius: 6px; font-size: 14px; font-weight: 600;
+      cursor: pointer; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .lang-toggle:hover { background: #f4f4f4; }
+  </style>
+</head>
+<body>
+
+  <a href="cv.html" class="lang-toggle" title="English">EN</a>
+  <button class="print-btn" onclick="window.print()">Télécharger PDF</button>
+
+  <div class="page">
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+      <div class="profile-photo">
+        <img src="profile.jpg" alt="Mehdi Tatar">
+      </div>
+      
+      <div class="name-box">
+        <div class="name">Mehdi Tatar</div>
+        <div class="role">Étudiant Ingénieur<br>en Informatique</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Contact</div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+216 94 963 455</span>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>mahditatar4@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Boomhal, Ben Arous, Tunisie</span>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>linkedin.com/in/mehdi-tatar-3819b63a9</span>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <span>github.com/mehdiTatar</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Compétences</div>
+        <ul class="skills-list">
+          <li>
+            <strong>Langages de programmation</strong>
+            <span>Java, C, C++, Python, PHP, JavaScript, SQL</span>
+          </li>
+          <li>
+            <strong>Développement Web</strong>
+            <span>HTML5, CSS3, Symfony, PHP, JavaScript</span>
+          </li>
+          <li>
+            <strong>Développement d'applications</strong>
+            <span>JavaFX, Qt Framework, FlutterFlow</span>
+          </li>
+          <li>
+            <strong>Bases de données</strong>
+            <span>MySQL, Oracle Database</span>
+          </li>
+          <li>
+            <strong>Systèmes d'exploitation & Virtualisation</strong>
+            <span>Linux, Ubuntu, VMware</span>
+          </li>
+          <li>
+            <strong>Réseaux & Systèmes Embarqués</strong>
+            <span>Concepts Cisco CCNA, Arduino, Programmation Microcontrôleurs, Intégration Capteurs</span>
+          </li>
+          <li>
+            <strong>Outils de développement</strong>
+            <span>Git, GitHub, XAMPP, Arduino IDE</span>
+          </li>
+          <li>
+            <strong>Outils de Design</strong>
+            <span>Adobe Photoshop, Adobe Illustrator, Adobe Premiere Pro</span>
+          </li>
+          <li>
+            <strong>Soft Skills</strong>
+            <span>Résolution de problèmes, Travail d'équipe, Adaptabilité, Apprentissage continu, Gestion du temps</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Langues</div>
+        <div class="lang-item"><strong>Arabe</strong> <span>Maternel</span></div>
+        <div class="lang-item"><strong>Anglais</strong> <span>B2</span></div>
+        <div class="lang-item"><strong>Français</strong> <span>B2</span></div>
+        <div class="lang-item"><strong>Espagnol</strong> <span>Débutant</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+      <div class="section">
+        <div class="section-title">Profil</div>
+        <p class="about-text">
+          Je suis un Étudiant Ingénieur en Informatique et Développeur Logiciel passionné par la création de solutions pratiques et innovantes. Je développe des applications web et bureau en utilisant Java, Symfony, PHP, C++, JavaFX et SQL, tout en élargissant continuellement mes compétences en développement logiciel, réseaux et cybersécurité. Je m'épanouis dans des environnements exigeants et cherche constamment à repousser les limites de mes connaissances techniques.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Expérience Professionnelle</div>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">Stagiaire en Développement Humain et Social</div>
+            <div class="item-date">Août 2024</div>
+          </div>
+          <div class="item-sub">Total Security</div>
+          <div class="item-desc">
+            Stage réalisé dans une entreprise spécialisée dans les solutions de sécurité et de surveillance électronique. Découverte des systèmes de contrôle d'accès, de vidéosurveillance, des scanners à rayons X et des technologies de sécurité, tout en développant mes compétences en communication, travail d'équipe et professionnalisme dans un environnement concret.
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">Cycle Ingénieur en Informatique</div>
+            <div class="item-date">Septembre 2023 – Présent</div>
+          </div>
+          <div class="item-sub">ESPRIT – École Supérieure Privée d'Ingénierie et de Technologie</div>
+          <div class="item-desc">
+            Actuellement en préparation d'un diplôme d'ingénieur en informatique (passage de 3ème à 4ème année). Développement de compétences à travers des cours académiques et des projets pratiques en développement logiciel, bases de données, réseaux et systèmes d'information.
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">Baccalauréat en Informatique</div>
+            <div class="item-date">2022</div>
+          </div>
+          <div class="item-sub">Apollo School | Collège & Lycée de Radès</div>
+          <div class="item-desc">
+            Programme de lycée axé sur l'informatique, acquisition de bases solides en programmation, algorithmique, mathématiques et résolution de problèmes.
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">Cisco Certified Network Associate (CCNA)</div>
+            <div class="item-date">2026</div>
+          </div>
+          <div class="item-sub">Cisco Networking Academy</div>
+          <div class="item-desc">
+            Obtention de la certification CCNA, attestant de connaissances en fondamentaux des réseaux, adressage IPv4, sous-réseaux, routage, commutation et concepts de base en sécurité réseau.
+          </div>
+        </div>
+      </div>
+      
+      <div class="section">
+        <div class="section-title">Projets Sélectionnés</div>
+        
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">Système de Gestion Hospitalière (PinkShield)</div>
+          </div>
+          <div class="item-desc">
+            Un système complet pour gérer efficacement les opérations hospitalières, traitant les dossiers, les rendez-vous et la gestion du personnel de manière fluide.
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">Plateforme de Signalement d'Urgences (Urban Alert)</div>
+          </div>
+          <div class="item-desc">
+            Une plateforme web conçue pour faciliter le signalement rapide des urgences, connectant instantanément les utilisateurs aux unités d'intervention.
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">ERP pour Entreprise de Nettoyage</div>
+          </div>
+          <div class="item-desc">
+            Une solution logicielle de bureau conçue en C++ pour gérer les plannings, les employés et les opérations d'une entreprise de nettoyage.
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">Jeu 2D sur le Thème de la Santé avec Contrôleur Arduino</div>
+          </div>
+          <div class="item-desc">
+            Un jeu 2D développé en C sous Ubuntu, mettant en œuvre la logique de jeu, la gestion des événements et les interactions utilisateur dans un environnement graphique. Le projet a été enrichi d'un contrôleur basé sur Arduino, illustrant les interactions matérielles et les concepts de programmation embarquée.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    if (window.location.hash === '#print') {
+      setTimeout(() => { window.print(); }, 500);
+    }
+  </script>
+</body>
+</html>
